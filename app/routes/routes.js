@@ -22,7 +22,7 @@ module.exports = function(application) {
 
 		application.app.controllers.jogo.novoLancamento(application, req, res);
 		
-		res.send('Esta Funcionalidade Não foi implementada ainda');
+		//res.send('Esta Funcionalidade Não foi implementada ainda');
 
 	});
 
@@ -30,7 +30,7 @@ module.exports = function(application) {
 
 		console.log('routes: /reiniciar');
 		
-		res.send('Esta Funcionalidade Não foi implementada ainda');
+		//res.send('Esta Funcionalidade Não foi implementada ainda');
 
 	});
 
@@ -38,7 +38,7 @@ module.exports = function(application) {
 
 		console.log('routes: /encerrar');
 		
-		res.send('Esta Funcionalidade Não foi implementada ainda');
+		//res.send('Esta Funcionalidade Não foi implementada ainda');
 
 	});
 

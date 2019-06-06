@@ -2,14 +2,22 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
 
 	<main>
 
+		<div class="container col-12 col-sm-8 col-md-6 bg-light p-2 text-center">
+
 	<h1>Projeto Jogar Dados</h1>
 
-	<button type="button" id="buttonLancarDados">Lançar Dados</button>
+	<p>CLIQUE NO BOTÃO ABAIXO PARA LANÇAR OS DADOS</p>
+
+	
+	<button class="btn btn-success" type="button" id="buttonLancarDados">Lançar Dados</button>
+
+</div>
 
 	</main>
 
@@ -20,8 +28,11 @@
 	<script type="text/javascript">
 		
 		$(document).ready(function() {
+
 			$('#buttonLancarDados').click(function(){
+
 				location.href = 'lancarDados';
+
 			});	
 		});
 	</script>

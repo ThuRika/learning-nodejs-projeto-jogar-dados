@@ -6,7 +6,7 @@ module.exports = function(application) {
 
 	});
 
-	application.get('/iniciar', function(req,res){
+	application.post('/iniciar', function(req,res){
 
 		console.log('routes: /iniciar');
 

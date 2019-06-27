@@ -1,6 +1,8 @@
-function Jogo(dados  = 5, lados = 6) {
+function Jogo(limitePonto = 0, limiteJogada = 0, dados  = 5, lados = 6) {
 
 	console.log('model: executar construtor de jogo');
+	this.limiteLancamento = limiteJogada;
+	this.limitePontuacao = limitePonto;
 	this.dados = dados;
 	this.lados = lados;
 	this.pontos = 0;
@@ -28,6 +30,7 @@ Jogo.prototype.lancarDados = function () {
 	return lancamento;
 }
 
+
 Jogo.prototype.contarDados = function (lancamento) {
 	var contagem = Array(this.lados).fill(0);
 	for (var i = 0; i < lancamento.length; i++) {
@@ -45,6 +48,7 @@ const NADA     = { jogo : 'Nenhum'  , pontos : 0   }
 Jogo.prototype.analizarLancamento = function(lancamento){
 
 	var contagem = this.contarDados(lancamento);
+
 	var resultado;
 
 	if (contagem.find(e => e === 5))
@@ -63,25 +67,43 @@ Jogo.prototype.analizarLancamento = function(lancamento){
 
 }
 
+
 Jogo.prototype.novoLancamento = function(){
 
 	console.log('model: novoLancamento');
-	var lancamento = this.lancarDados();
-	console.log('model: analiseLancamento');
-	var analiseLancamento = this.analizarLancamento(lancamento);
-	this.pontos += analiseLancamento.pontos;
-	this.n += 1;
-	console.log('model: prepara resultado');
 
-	var resultado = {
-		pontosAcumulados : this.pontos,
-		nLancamentos : this.n,
-		lancamento : lancamento,
-		jogoLancamento : analiseLancamento.jogo,
-		pontosLancamento : analiseLancamento.pontos
-	};
+	if ((this.n < this.limiteLancamento) or (this.pontos < this.limitePontuacao)){
 
-	return resultado;
+		var lancamento = this.lancarDados();
+		console.log('model: analiseLancamento');	
+		var analiseLancamento = this.analizarLancamento(lancamento);
+		this.pontos += analiseLancamento.pontos;
+		this.n += 1;
+		console.log('model: prepara resultado');
+
+		var resultado = {
+
+			pontosAcumulados : (limitePonto - this.pontos),
+			nLancamentos : this.n,
+			restanteJogada : (limiteJogada - this.n),
+			lancamento : lancamento,
+			jogoLancamento : analiseLancamento.jogo,
+			pontosLancamento : analiseLancamento.pontos,
+			mensagem : undefined
+		};
+
+		return resultado;
+
+	} 
+	else {
+		var resultado = {
+			mensagem : 'Voce Atingiu o numero maximo de Jogadas'
+		}
+		return resultado;
+
+	}
+
+	
 }
 
 jogo = new Jogo();

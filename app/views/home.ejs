@@ -15,20 +15,30 @@
 
 		<div class="container col-12 col-sm-8 col-md-6 bg-light p-2 text-center">
 
-			<h1>Projeto Jogar Dados</h1>
+			<div class="card-header"><h1>Projeto Jogar Dados</h1></div>
 
-			<p>CLIQUE NO BOTÃO ABAIXO PARA INICIAR O JOGO</p>
-			<form method="post" action="iniciar">
+			<div class="card-body">
 
-				<label> Limite De Jogadas</label>
-				<input class="" type="text" name="limiteJogada">
+				<p class="card-text">	
 
-				<label> Limite De Pontos</label>
-				<input class="" type="text" name="limitePontos">
+					<h3>INSIRA OS NUMEROS ABAIXO E CLIQUE NO BOTÃO ABAIXO PARA INICIAR O JOGO</h3>
 
-				<button class="btn btn-success" type="submit" id="buttonComecar">Começar</button>
+					<form class="form-group" method="post" action="iniciar">
 
-			</form>
+						<label>Limite De Jogadas</label>
+						<input class="form-control" type="number" name="limiteJogada">
+
+						<label>Limite De Pontos</label>
+						<input class="form-control" type="number" name="limitePonto">
+
+						<div class="col-12 mx-auto mt-2 px-4 text-center">
+
+							<button class="btn btn-success btn-lg" aria-pressed="false" autocomplete="off" type="submit" id="buttonComecar">Começar</button>
+
+						</div>
+					</form>
+				</p>
+			</div>
 		</div>
 
 	</main>
@@ -46,7 +56,7 @@
 		});
 		
 	});
-*/
+	*/
 </script>
 
 </html>

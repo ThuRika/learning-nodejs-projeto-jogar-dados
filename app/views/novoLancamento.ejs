@@ -16,138 +16,138 @@
 
 		<div class="card bg-light mb-3">
 
-		<div class="container col-12 col-sm-8 col-md-6 p-2 text-center">
+			<div class="container col-12 col-sm-8 col-md-6 p-2 text-center">
 
-			<div class="card-header"><h1>Projeto Jogar Dados</h1></div>
+				<div class="card-header"><h1>Projeto Jogar Dados</h1></div>
 
-			<div class="card-body">
+				<div class="card-body">
 
-			<p class="card-text">	
+					<p class="card-text">	
 
-				<% if (mensagem) { %>
-				<p> <%= mensagem %></p>
-				<% } else {  %>
+						<% if (mensagem) { %>
+						<p> <%= mensagem %> </p>
+						<% } else {  %>
 
-			<div class="container col-md-12 text-center">
-				
-				<div class="card-deck my-2">
-					
-
-					<div class="col-6 p-2">
-						
-
-						<div class="card">
+						<div class="container col-md-12 text-center">
 							
+							<div class="card-deck my-2">
+								
 
-							<div class="card-header">Pontos Acumulados</div>
-							<div class="card-body"><%= pontosAcumulados %></div>
+								<div class="col-6 p-2">
+									
+
+									<div class="card">
+										
+
+										<div class="card-header">Pontos Acumulados</div>
+										<div class="card-body"><%= pontosAcumulados %></div>
+
+									</div>
+
+								</div>
+
+								<div class="col-6 p-2">
+									
+
+									<div class="card">
+
+										<div class="card-header">Lançamentos Restantes:</div>
+										<div class="card-body"><%= restanteJogada%></div>
+
+									</div>
+
+								</div>
+
+								<div class="col-12 p-2">
+									
+
+									<div class="card">
+
+										<div class="card-header">Lançamento:</div>
+										<div class="card-body">
+											<% for (var i=0; i < lancamento.length; i++) { %>
+											<img src="/img/dado<%= lancamento[i]%>.png"><% }  %>
+
+										</div>
+
+									</div>
+
+
+									<div class="col-12 p-2">
+										
+
+										<div class="card">
+
+											<div class="card-header">Jogo Lançamento Atual:</div>
+											<div class="card-body"><%= jogoLancamento %></div>
+
+										</div>
+
+									</div>
+
+
+									<div class="col-12 p-2">
+										
+
+										<div class="card">
+
+											<div class="card-header">Pontuação Lançamento:</div>
+											<div class="card-body"><%= pontosLancamento %></div>
+
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
 
 						</div>
 
-					</div>
-
-					<div class="col-6 p-2">
-						
-
-						<div class="card">
-
-							<div class="card-header">Lançamentos Restantes:</div>
-							<div class="card-body"><%= restanteJogada%></div>
-
-						</div>
-
-					</div>
-
-					<div class="col-12 p-2">
-						
-
-						<div class="card">
-
-							<div class="card-header">Lançamento:</div>
-							<div class="card-body">
-							<% for (var i=0; i < lancamento.length; i++) { %>
-						 	<img src="/img/dado<%= lancamento[i]%>.png"><% }  %>
-
-						</div>
-
-					</div>
-
-
-					<div class="col-12 p-2">
-						
-
-						<div class="card">
-
-							<div class="card-header">Jogo Lançamento Atual:</div>
-							<div class="card-body"><%= jogoLancamento %></div>
-
-						</div>
-
-					</div>
-
-
-					<div class="col-12 p-2">
-						
-
-						<div class="card">
-
-							<div class="card-header">Pontuação Lançamento:</div>
-							<div class="card-body"><%= pontosLancamento %></div>
-
-						</div>
-
-					</div>
+						<% }%>
+					</p>	
 
 				</div>
 
+			</div>		
+
+			<div class="col-12 mx-auto mt-2 px-4 text-center">
+
+
+				<button class="btn btn-success btn-lg" aria-pressed="false" autocomplete="off" type="button" id="buttonLancarDados">Lancar Dados</button>
+
+				<button class="btn btn-warning btn-lg" aria-pressed="false" autocomplete="off" type="button" id="buttonReiniciarJogo">Reiniciar</button>
+
+				<button class="btn btn-danger btn-lg" aria-pressed="false" autocomplete="off" type="button" id="buttonEncerrarJogo">Encerrar</button>
+
+
 			</div>
 
-		</div>
-
-		<% }%>
-	</p>	
-
-	</div>
-
-</div>		
-
-		<div class="col-12 mx-auto mt-2 px-4 text-center">
-
-
-		<button class="btn btn-success" type="button" id="buttonLancarDados">Lancar Dados</button>
-
-		<button class="btn btn-warning" type="button" id="buttonReiniciarJogo">Reiniciar</button>
-
-		<button class="btn btn-danger" type="button" id="buttonEncerrarJogo">Encerrar</button>
-
-
-	</div>
-
-	</main>
+		</main>
 
 
 
-</body>
+	</body>
 
-<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/jquery-3.4.1.min.js"></script>
 
-<script type="text/javascript">
-	
-	$(document).ready(function() {
-
-		$('#buttonLancarDados').click(function(){
-			location.href='lancarDados';
+	<script type="text/javascript">
 		
-		});
+		$(document).ready(function() {
 
-		$('#buttonReiniciarJogo').click(function(){
-			location.href='reiniciar';
-		});
+			$('#buttonLancarDados').click(function(){
+				location.href='lancarDados';
+				
+			});
 
-		$('#buttonEncerrarJogo').click(function(){
-			location.href='encerrar';
+			$('#buttonReiniciarJogo').click(function(){
+				location.href='reiniciar';
+			});
+
+			$('#buttonEncerrarJogo').click(function(){
+				location.href='encerrar';
+			});
+			
 		});
-	
-	});
-</script>
-</html>
+	</script>
+	</html>

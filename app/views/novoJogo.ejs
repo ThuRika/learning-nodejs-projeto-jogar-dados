@@ -10,32 +10,33 @@
 
 		<div class="container col-12 col-sm-8 col-md-6 bg-light p-2 text-center">
 
-	<h1>Projeto Jogar Dados</h1>
+			<h1>Projeto Jogar Dados</h1>
 
-	<p>CLIQUE NO BOTÃO ABAIXO PARA LANÇAR OS DADOS</p>
+			<p>CLIQUE NO BOTÃO ABAIXO PARA LANÇAR OS DADOS</p>
 
-		
-	
-	<button class="btn btn-success" type="button" id="buttonLancarDados">Lançar Dados</button>
+			<div class="col-12 mx-auto mt-2 px-4 text-center">	
+				
+				<button class="btn btn-success btn-lg" aria-pressed="false" autocomplete="off" type="button" id="buttonLancarDados">Lançar Dados</button>
 
-</div>
+			</div>
+		</div>
 
 	</main>
 
 </body>
 
-	<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+
+<script type="text/javascript">
 	
-	<script type="text/javascript">
-		
-		$(document).ready(function() {
+	$(document).ready(function() {
 
-			$('#buttonLancarDados').click(function(){
+		$('#buttonLancarDados').click(function(){
 
-				location.href = 'lancarDados';
+			location.href = 'lancarDados';
 
-			});	
-		});
-	</script>
+		});	
+	});
+</script>
 
 </html>

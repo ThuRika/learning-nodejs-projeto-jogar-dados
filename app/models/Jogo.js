@@ -1,4 +1,4 @@
-function Jogo(limitePonto = 0, limiteJogada = 0, dados  = 5, lados = 6) {
+function Jogo(limiteJogada = 0, limitePonto = 0, dados  = 5, lados = 6) {
 
 	console.log('model: executar construtor de jogo');
 	this.limiteLancamento = limiteJogada;
@@ -72,7 +72,7 @@ Jogo.prototype.novoLancamento = function(){
 
 	console.log('model: novoLancamento');
 
-	if ((this.n < this.limiteLancamento) or (this.pontos < this.limitePontuacao)){
+	if (this.n < this.limiteLancamento){
 
 		var lancamento = this.lancarDados();
 		console.log('model: analiseLancamento');	
@@ -83,7 +83,7 @@ Jogo.prototype.novoLancamento = function(){
 
 		var resultado = {
 
-			pontosAcumulados : (limitePonto - this.pontos),
+			pontosAcumulados : this.pontos,
 			nLancamentos : this.n,
 			restanteJogada : (limiteJogada - this.n),
 			lancamento : lancamento,
@@ -97,7 +97,8 @@ Jogo.prototype.novoLancamento = function(){
 	} 
 	else {
 		var resultado = {
-			mensagem : 'Voce Atingiu o numero maximo de Jogadas'
+			mensagem : 'Voce Atingiu o numero maximo de Jogadas',
+			pontosAcumulados : this.pontos
 		}
 		return resultado;
 

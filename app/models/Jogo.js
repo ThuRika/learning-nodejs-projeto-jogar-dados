@@ -72,39 +72,46 @@ Jogo.prototype.novoLancamento = function(){
 
 	console.log('model: novoLancamento');
 
-	if (this.n < this.limiteLancamento){
-
-		var lancamento = this.lancarDados();
-		console.log('model: analiseLancamento');	
-		var analiseLancamento = this.analizarLancamento(lancamento);
-		this.pontos += analiseLancamento.pontos;
-		this.n += 1;
-		console.log('model: prepara resultado');
-
-		var resultado = {
-
-			pontosAcumulados : this.pontos,
-			nLancamentos : this.n,
-			restanteJogada : (limiteJogada - this.n),
-			lancamento : lancamento,
-			jogoLancamento : analiseLancamento.jogo,
-			pontosLancamento : analiseLancamento.pontos,
-			mensagem : undefined
-		};
-
-		return resultado;
-
-	} 
-	else {
+	if (this.n == this.limiteLancamento){
 		var resultado = {
 			mensagem : 'VOCE ATINGIU O NUMERO MAXIMO DE JOGADAS',
-			pontosAcumulados : this.pontos
+			pontosAcumulados : this.pontos,
+			restanteJogada : (limiteJogada - this.n)
+
 			
 		}
 		return resultado;
+	} 
 
+	if (this.pontos > this.limitePontuacao){	
+		var resultado = {
+			mensagem : 'VOCE ATINGIU O NUMERO MAXIMO DE PONTOS',
+			pontosAcumulados : this.pontos,
+			restanteJogada : (limiteJogada - this.n)
+			
+		}
+		return resultado;
 	}
 
+	var lancamento = this.lancarDados();
+	console.log('model: analiseLancamento');	
+	var analiseLancamento = this.analizarLancamento(lancamento);
+	this.pontos += analiseLancamento.pontos;
+	this.n += 1;
+	console.log('model: prepara resultado');
+
+	var resultado = {
+
+		pontosAcumulados : this.pontos,
+		nLancamentos : this.n,
+		restanteJogada : (limiteJogada - this.n),
+		lancamento : lancamento,
+		jogoLancamento : analiseLancamento.jogo,
+		pontosLancamento : analiseLancamento.pontos,
+		mensagem : undefined
+	};
+
+	return resultado;
 	
 }
 

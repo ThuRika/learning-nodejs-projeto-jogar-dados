@@ -22,10 +22,12 @@
 
 				<div class="card-body">
 
-					<p class="card-text">	
-
 						<% if (mensagem) { %>
-						<p> <%= mensagem %> </p>
+						<div class="card-header"><p> <%= mensagem %> </p></div>
+						<div class="card-body">
+						<p>TOTAL DE PONTOS ACUMULADOS:</p>
+						<p><%= pontosAcumulados %></p>
+						</div>
 						<% } else {  %>
 
 						<div class="container col-md-12 text-center">
@@ -104,8 +106,7 @@
 
 						</div>
 
-						<% }%>
-					</p>	
+						<% }%>	
 
 				</div>
 

@@ -97,8 +97,9 @@ Jogo.prototype.novoLancamento = function(){
 	} 
 	else {
 		var resultado = {
-			mensagem : 'Voce Atingiu o numero maximo de Jogadas',
+			mensagem : 'VOCE ATINGIU O NUMERO MAXIMO DE JOGADAS',
 			pontosAcumulados : this.pontos
+			
 		}
 		return resultado;
 

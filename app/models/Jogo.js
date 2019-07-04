@@ -77,7 +77,6 @@ Jogo.prototype.novoLancamento = function(){
 			mensagem : 'VOCE ATINGIU O NUMERO MAXIMO DE JOGADAS',
 			pontosAcumulados : this.pontos,
 			restanteJogada : (limiteJogada - this.n)
-
 			
 		}
 		return resultado;
